@@ -6,7 +6,7 @@ An iOS Framework dedicated to create a scroller view with dynamic contents (Pref
 Support Platforms
 =================
 
-Both ARC & NON_ARC ENABLED 
+Both ARC & NON_ARC ENABLED
 Deployment Target - iOS 7.0 or later
 
 Installation
