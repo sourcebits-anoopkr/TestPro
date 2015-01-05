@@ -1,13 +1,14 @@
 McKScrollerKit
 ==============
 
-An iOS Framework dedicated to create a scroller view with dynamic contents (Preferably Images &amp; Virtual Views) with page indicator.
+An iOS Framework dedicated to create a scroller view with dynamic contents (Preferably Images &amp; Virtual Views) having page indicator.
 
 Support Platforms
 =================
 
-Both ARC & NON_ARC ENABLED
-Deployment Target - iOS 7.0 or later
+Both ARC & NON_ARC ENABLED Projects.
+
+Deployment Target - iOS 7.0 or later.
 
 Installation
 ============
@@ -20,7 +21,6 @@ In the Build Phases tab of your app's Target, under the "Link Binary With Librar
 
 That's it. You are now ready to integrate!
 
-Enjoy Coding! 
 
 Integration
 ===========
@@ -30,7 +30,9 @@ Import McKScrollerKit file (i.e,#import <McKScrollerKit/McKScrollerKit.h>) to th
 Basically,McKScrollerKit provides you three methods as listed below.
 
 1.-(id)initWithFrame:(CGRect)frame withContentArray:(NSMutableArray*)array;
+
 2.-(void)addPageControl:(PageControl)pageControl withFramePosition:(PageControlPosition)pageControlPos;
+
 3.-(void)willAnimateToFrame:(CGRect)frame;
 
 Method 1 
@@ -62,7 +64,7 @@ Add page control & takes two enum values -  First to opt Page indicator to be di
     [scrollContentsDictArray addObject:scrollContents];
     
     if(scrollerView == nil)
-        scrollerView = [[McKScroller alloc]initWithFrame:self.view.bounds withContentArray:scrollContentsDictArray];
+        scrollerView = [[McKScrollerKit alloc]initWithFrame:self.view.bounds withContentArray:scrollContentsDictArray];
         
         Method 2
     [scrollerView addPageControl:pageControlEnabled withFramePosition:PageControlBottom];
