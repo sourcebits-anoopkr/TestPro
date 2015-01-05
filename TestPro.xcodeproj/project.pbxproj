@@ -14,6 +14,7 @@
 		725C26791A4954A800140AF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 725C26781A4954A800140AF3 /* Images.xcassets */; };
 		725C267C1A4954A800140AF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 725C267A1A4954A800140AF3 /* LaunchScreen.xib */; };
 		725C26881A4954A800140AF3 /* TestProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 725C26871A4954A800140AF3 /* TestProTests.m */; };
+		72990B241A5A8AFC00810003 /* McKScrollerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72990B231A5A8AFC00810003 /* McKScrollerKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		725C26681A4954A800140AF3 /* TestPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		725C26681A4954A800140AF3 /* McKScrollerKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McKScrollerKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		725C266C1A4954A800140AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		725C266D1A4954A800140AF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		725C266F1A4954A800140AF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		725C26811A4954A800140AF3 /* TestProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		725C26861A4954A800140AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		725C26871A4954A800140AF3 /* TestProTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProTests.m; sourceTree = "<group>"; };
+		72990B231A5A8AFC00810003 /* McKScrollerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = McKScrollerKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72990B241A5A8AFC00810003 /* McKScrollerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		725C265F1A4954A800140AF3 = {
 			isa = PBXGroup;
 			children = (
+				72990B231A5A8AFC00810003 /* McKScrollerKit.framework */,
 				725C266A1A4954A800140AF3 /* TestPro */,
 				725C26841A4954A800140AF3 /* TestProTests */,
 				725C26691A4954A800140AF3 /* Products */,
@@ -72,7 +76,7 @@
 		725C26691A4954A800140AF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				725C26681A4954A800140AF3 /* TestPro.app */,
+				725C26681A4954A800140AF3 /* McKScrollerKitSample.app */,
 				725C26811A4954A800140AF3 /* TestProTests.xctest */,
 			);
 			name = Products;
@@ -136,7 +140,7 @@
 			);
 			name = TestPro;
 			productName = TestPro;
-			productReference = 725C26681A4954A800140AF3 /* TestPro.app */;
+			productReference = 725C26681A4954A800140AF3 /* McKScrollerKitSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		725C26801A4954A800140AF3 /* TestProTests */ = {
@@ -345,9 +349,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TestPro",
+				);
 				INFOPLIST_FILE = TestPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = McKScrollerKitSample;
 			};
 			name = Debug;
 		};
@@ -355,9 +366,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TestPro",
+				);
 				INFOPLIST_FILE = TestPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = McKScrollerKitSample;
 			};
 			name = Release;
 		};
@@ -414,6 +432,7 @@
 				725C268D1A4954A800140AF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		725C268E1A4954A800140AF3 /* Build configuration list for PBXNativeTarget "TestProTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +441,7 @@
 				725C26901A4954A800140AF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

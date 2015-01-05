@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <McKScrollerKit/McKScrollerKit.h>
 
 @interface ViewController : UIViewController
 
