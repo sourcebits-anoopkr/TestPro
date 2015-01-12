@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		725C26681A4954A800140AF3 /* McKScrollerKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McKScrollerKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		725C26681A4954A800140AF3 /* TestPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		725C266C1A4954A800140AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		725C266D1A4954A800140AF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		725C266F1A4954A800140AF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		725C26691A4954A800140AF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				725C26681A4954A800140AF3 /* McKScrollerKitSample.app */,
+				725C26681A4954A800140AF3 /* TestPro.app */,
 				725C26811A4954A800140AF3 /* TestProTests.xctest */,
 			);
 			name = Products;
@@ -140,7 +140,7 @@
 			);
 			name = TestPro;
 			productName = TestPro;
-			productReference = 725C26681A4954A800140AF3 /* McKScrollerKitSample.app */;
+			productReference = 725C26681A4954A800140AF3 /* TestPro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		725C26801A4954A800140AF3 /* TestProTests */ = {
@@ -358,7 +358,7 @@
 				INFOPLIST_FILE = TestPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = McKScrollerKitSample;
+				PRODUCT_NAME = TestPro;
 			};
 			name = Debug;
 		};
@@ -375,7 +375,7 @@
 				INFOPLIST_FILE = TestPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = McKScrollerKitSample;
+				PRODUCT_NAME = TestPro;
 			};
 			name = Release;
 		};
