@@ -25,31 +25,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    [_virtualView setFrame:CGRectMake(0, 0, [ViewController screenSize].width, [ViewController screenSize].height)];
+    
     NSMutableArray* contentsArr = [[NSMutableArray alloc]init];
     NSMutableDictionary *scrollContents;
     
     scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"1.png"],@"Image",nil];
     [contentsArr addObject:scrollContents];
     
-    scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"2.png"],@"Image",nil];
+    scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"2.png"],@"Image",_virtualView ,@"View",nil];
     [contentsArr addObject:scrollContents];
     
-    scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"5.png"],@"Image",_virtualView ,@"View",nil];
+    scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"5.png"],@"Image",nil];
     [contentsArr addObject:scrollContents];
     
     scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"6.png"],@"Image",nil];
     [contentsArr addObject:scrollContents];
 
-    
-    if(scroller == nil)
-        scroller = [[McKScrollerKit alloc]initWithFrame:self.view.bounds withContentArray:contentsArr];
-    [scroller addPageControl:pageControlEnabled withFramePosition:PageControlBottom];
-    [self.view addSubview:scroller];
+    [_virtualView setFrame:CGRectMake(0, 0, [ViewController screenSize].width, [ViewController screenSize].height)];
 
+    if(scroller == nil)
+        scroller = [[McKScrollerKit alloc]initWithFrame:CGRectMake(0, 0, [ViewController screenSize].width, [ViewController screenSize].height) withContentArray:contentsArr];
+    [scroller addPageControl:pageControlEnabled withFramePosition:PageControlBottomLeft];
+    [self.view addSubview:scroller];
 }
 
 
--(void)viewDidLayoutSubviews{
+-(void)viewWillLayoutSubviews{
 
 }
 
@@ -61,19 +63,41 @@
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
-    if(UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
-        [scroller willAnimateToFrame:self.view.bounds];
-    else
-        [scroller willAnimateToFrame:self.view.bounds];
-
+    [_virtualView setFrame:CGRectMake(100, 0, [ViewController screenSize].width, [ViewController screenSize].height)];
+    [scroller willAnimateToFrame:CGRectMake(0, 0, [ViewController screenSize].width, [ViewController screenSize].height)];
 }
 
 - (IBAction)buttonAction:(id)sender {
     
     [UIView animateWithDuration:2.0 animations:^{
-        _btn1.layer.backgroundColor = [UIColor redColor].CGColor;
-    } completion:NULL];
+            _btn1.layer.backgroundColor = [UIColor orangeColor].CGColor;
+    } completion:^(BOOL finished)
+    {
+        if(finished) {
+            [UIView animateWithDuration:2.0 animations:^{
+                _btn1.layer.backgroundColor = [UIColor redColor].CGColor;
+            } completion:^(BOOL finished)
+            {
+                if(finished)
+                {
+                    [UIView animateWithDuration:2.0 animations:^{
+                        _btn1.layer.backgroundColor = [UIColor greenColor].CGColor;
+                    } completion:NULL];
+                }
+            }];
+        }
+    }];
     
+}
+
++ (CGSize)screenSize {
+    
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+    {
+        return CGSizeMake(screenSize.height, screenSize.width);
+    }
+    return screenSize;
 }
 
 @end
