@@ -15,6 +15,7 @@
 		725C267C1A4954A800140AF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 725C267A1A4954A800140AF3 /* LaunchScreen.xib */; };
 		725C26881A4954A800140AF3 /* TestProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 725C26871A4954A800140AF3 /* TestProTests.m */; };
 		72990B241A5A8AFC00810003 /* McKScrollerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72990B231A5A8AFC00810003 /* McKScrollerKit.framework */; };
+		72F8BF2B1A67AC3600C8A764 /* McKScrollerKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 72F8BF2A1A67AC3600C8A764 /* McKScrollerKitResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		725C26861A4954A800140AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		725C26871A4954A800140AF3 /* TestProTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProTests.m; sourceTree = "<group>"; };
 		72990B231A5A8AFC00810003 /* McKScrollerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = McKScrollerKit.framework; sourceTree = "<group>"; };
+		72F8BF2A1A67AC3600C8A764 /* McKScrollerKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = McKScrollerKitResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		725C265F1A4954A800140AF3 = {
 			isa = PBXGroup;
 			children = (
+				72F8BF2A1A67AC3600C8A764 /* McKScrollerKitResources.bundle */,
 				72990B231A5A8AFC00810003 /* McKScrollerKit.framework */,
 				725C266A1A4954A800140AF3 /* TestPro */,
 				725C26841A4954A800140AF3 /* TestProTests */,
@@ -205,6 +208,7 @@
 			files = (
 				725C26771A4954A800140AF3 /* Main.storyboard in Resources */,
 				725C267C1A4954A800140AF3 /* LaunchScreen.xib in Resources */,
+				72F8BF2B1A67AC3600C8A764 /* McKScrollerKitResources.bundle in Resources */,
 				725C26791A4954A800140AF3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +363,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TestPro;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -376,6 +381,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TestPro;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

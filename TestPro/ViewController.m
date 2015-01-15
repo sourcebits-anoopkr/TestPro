@@ -33,7 +33,7 @@
     scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"1.png"],@"Image",nil];
     [contentsArr addObject:scrollContents];
     
-    scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"2.png"],@"Image",_virtualView ,@"View",nil];
+    scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNull null],@"Image",_virtualView ,@"View",nil];
     [contentsArr addObject:scrollContents];
     
     scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"5.png"],@"Image",nil];
@@ -46,7 +46,7 @@
 
     if(scroller == nil)
         scroller = [[McKScrollerKit alloc]initWithFrame:CGRectMake(0, 0, [ViewController screenSize].width, [ViewController screenSize].height) withContentArray:contentsArr];
-    [scroller addPageControl:pageControlEnabled withFramePosition:PageControlBottomLeft];
+    [scroller addMcKPageControlWithActiveDotImage:[UIImage imageNamed:@"active_dot"] withInactiveDotImage:[UIImage imageNamed:@"inactive_dot"] withDotInterspace:5.0 atPosition:PageControlBottomRight];
     [self.view addSubview:scroller];
 }
 
