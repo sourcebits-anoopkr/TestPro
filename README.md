@@ -6,7 +6,7 @@ An iOS Framework dedicated to create a scroller view with dynamic contents (Pref
 Support Platforms
 =================
 
-Both ARC & NON_ARC ENABLED Projects.
+Works With ARC.
 
 Deployment Target - iOS 7.0 or later.
 
@@ -31,7 +31,7 @@ Basically,McKScrollerKit provides you three methods as listed below.
 
 1.-(id)initWithFrame:(CGRect)frame withContentArray:(NSMutableArray*)array;
 
-2.-(void)addPageControl:(PageControl)pageControl withFramePosition:(PageControlPosition)pageControlPos;
+2.-(void)addMcKPageControlWithActiveDotImage:(UIImage*)activeImage withInactiveDotImage:(UIImage*)inactiveImage withDotInterspace:(int)gapWidth atPosition:(PageControlPosition)positionValue;
 
 3.-(void)willAnimateToFrame:(CGRect)frame;
 
@@ -50,12 +50,17 @@ array - Array of dictionaries with two key-value
     NSMutableDictionary *scrollContents = [NSMutableDictionary dictionaryWithObjectsAndKeys:<Image>,@"Image",<View Object>,@"View",nil];
     [scrollContentsDictArray addObject:scrollContents];
     
-@"Image" & @"View" are the keys for image & virtual view objects.
+Use @"Image" & @"View" as keys for Image & Virtual view objects.
+
+Add dictionary with Image and/or view instances.
+If image is null,pass the null object([NSNull null]) for Image key.
 
 Method 2
 ========
 
-Add page control & takes two enum values -  First to opt Page indicator to be displayed/not. Latter for positioning the indicator to top or bottom of McKScroller View.
+Add custom page control with active & inactive dot images.
+Allows edit the interspace between the dots.
+Position the control to top & bottom - center,left & right.
 
        Method 1
     NSMutableArray* scrollContentsDictArray = [[NSMutableArray alloc]init];
@@ -67,7 +72,7 @@ Add page control & takes two enum values -  First to opt Page indicator to be di
         scrollerView = [[McKScrollerKit alloc]initWithFrame:self.view.bounds withContentArray:scrollContentsDictArray];
         
         Method 2
-    [scrollerView addPageControl:pageControlEnabled withFramePosition:PageControlBottom];
+    [scroller addMcKPageControlWithActiveDotImage:[UIImage imageNamed:@"active_dot"] withInactiveDotImage:[UIImage imageNamed:@"inactive_dot"] withDotInterspace:5.0 atPosition:PageControlBottomRight];
 
 Method 3
 ========
