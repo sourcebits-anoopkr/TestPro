@@ -10,23 +10,19 @@
 #import <Foundation/Foundation.h>
 
 typedef enum{
-    PageControlTop = 1,
-    PageControlBottom,
+    PageControlTopCenter = 1,
+    PageControlTopLeft,
+    PageControlTopRight,
+    PageControlBottomCenter,
     PageControlBottomLeft,
     PageControlBottomRight
 }PageControlPosition;
 
-typedef enum {
-    pageControlEnabled = 1,
-    pageControlDisabled
-}PageControl;
-
 @interface McKScrollerKit : UIView
 /*Set the MckScroller frame & array of content items*/
 -(id)initWithFrame:(CGRect)frame withContentArray:(NSMutableArray*)array;
-/*Add Page Control to the McKScroller  & place it either top,bottom,bottom-left or bottom-right the view*/
-/*Default PageControl = pageControlDisabled*/
--(void)addPageControl:(PageControl)pageControl withFramePosition:(PageControlPosition)pageControlPos;
+/*Add custom Page Control with active & inactive images for dots,insterpace between dots & dynamically place it on the screen*/
+-(void)addMcKPageControlWithActiveDotImage:(UIImage*)activeImage withInactiveDotImage:(UIImage*)inactiveImage withDotInterspace:(int)gapWidth atPosition:(PageControlPosition)positionValue;
 /*Manage the McKScroller orientations*/
 -(void)willAnimateToFrame:(CGRect)frame;
 
