@@ -43,7 +43,8 @@ Instantiate McKScrollerKit instance with this custom -init method.
 It takes frame & scroller content array(Array Of Dictionaries) as arguments.
 
 frame - Scroll View rect
-array - Array of dictionaries with two key-value 
+
+array - Array of dictionaries with image & view key-value. 
 
     NSMutableArray* scrollContentsDictArray = [[NSMutableArray alloc]init];
     
